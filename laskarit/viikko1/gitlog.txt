@@ -1,0 +1,106 @@
+Laura-MacBook-Pro:tiedostoja kauria$ git log --stat | cat
+commit ce784c26d4c475a8f43743a4d5a6724bf124f093
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 20:50:43 2021 +0200
+
+    made chages to files file1, file2 (file22) and file3
+
+ tiedostoja/{file2 => file22} | 0
+ tiedostoja/file3             | 1 +
+ 2 files changed, 1 insertion(+)
+
+commit c2596b8e863112756508893976f22abe2873e2ae
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 20:45:22 2021 +0200
+
+    created directory hakemistoja and added three files there
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 5f0c0528c1903e0c3465f169859c589944b44c09
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 20:40:18 2021 +0200
+
+    eka.txt small change
+
+ eka.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit cf6ec3080ee150a2ce21024049cbee06d334b055
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 20:30:19 2021 +0200
+
+    forgot add last time
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f7cde1741a5e8f41a2af0d22cd1036ecd7f2bcf4
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 20:26:14 2021 +0200
+
+    toinen.txt removed
+
+ tiedosto.txt | 1 -
+ toinen.txt   | 1 -
+ 2 files changed, 2 deletions(-)
+
+commit 8575d0359d5af7e37911884f39d060640117fdd7
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 20:18:45 2021 +0200
+
+    tiedosto.txt added some text
+
+ tiedosto.txt | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+
+commit 221193d295631cad7c59ed69e24e0ceb7897d3a6
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 20:08:21 2021 +0200
+
+    treenitiedosto.txt created and added
+
+ stuff/treenitiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit bd2add3ae7c457b5697e9bc25f68e19af998e6f7
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 20:06:49 2021 +0200
+
+    changes in kolmas.txt and toinen.txt
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 3e4a354c73c89bba4801704732b08135a5675c0b
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 20:05:13 2021 +0200
+
+    kolmas.txt added
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b90c58ac0225929b44fa12843cd862a2458a8ff2
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 19:53:41 2021 +0200
+
+    toinen.txt added
+
+ tiedosto.txt | 2 ++
+ toinen.txt   | 0
+ 2 files changed, 2 insertions(+)
+
+commit 60829583dec7f74061731bd418e567ada1dc9f21
+Author: Laura Kauria <lkauria@ad.helsinki.fi>
+Date:   Tue Nov 9 19:46:56 2021 +0200
+
+    tiedosto.txt added
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+Laura-MacBook-Pro:tiedostoja kauria$ 

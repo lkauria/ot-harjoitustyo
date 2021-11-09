@@ -1,0 +1,7 @@
+lkauria@melkki:/home/ad/lxhome/l/lkauria/Linux$ tree kurssit/
+kurssit/
+└── ot2021
+    └── viikko1
+
+2 directories, 0 files
+
