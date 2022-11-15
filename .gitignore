@@ -1,9 +1,5 @@
-.DS_Store
-*/__pycache__/*
-*/.coverage
-*/__pycache__/
 .pytest_cache
-laskarit/viikko2/maksukortti/src/__pycache__/
-laskarit/viikko2/maksukortti/src/tests/__pycache__/
-laskarit/viikko2/unicafe/src/__pycache__/
-laskarit/viikko2/unicafe/src/tests/__pycache__/
+__pycache__
+.DS_Store
+.coverage
+htmlcov
