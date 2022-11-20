@@ -4,9 +4,9 @@ Sovelluksen loogisen tietomallin muodostavat luokat Noppa, Pelaaja, Pelilauta:
 
 ```mermaid
  classDiagram
-      Pelaaja "1" --> "1" Ruutu
+      Pelaaja "2" --> "1" Ruutu
       Ruutu "40" --> "1" Pelilauta
-      Noppa "2" --> "1" Pelaaja
+      Pelaaja "1" --> "1" Noppa
       class Noppa{
           lukema
       }
