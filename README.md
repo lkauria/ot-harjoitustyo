@@ -8,5 +8,4 @@
 ## Kolmannen laskariviikon palautukset
 ###### Tekemättä
 
-...
 
