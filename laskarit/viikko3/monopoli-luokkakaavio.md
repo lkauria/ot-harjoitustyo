@@ -8,6 +8,7 @@ Sovelluksen loogisen tietomallin muodostavat luokat Noppa, Ruutu, Pelaaja, Pelil
       Ruutu "40" --> "1" Pelilauta
       Pelaaja "1" --> "1" Noppa
       Ruutu "1" --> "0-1" Kortti 
+      Ruutu "1" --> "0-1" Katu
       class Noppa{
           lukema
       }
