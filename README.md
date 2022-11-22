@@ -6,6 +6,6 @@
 ###### Linkki harjoitustyön vaatimusmäärittelydokumenttiin: https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md
 ###### Linkki työaikakirjanpitoon: https://github.com/lkauria/ot-harjoitustyo/blob/main/tyoaikakirjanpito.md
 ## Kolmannen laskariviikon palautukset
-###### Tekemättä
-
+###### Tehty
+###### Harjoitustyön tehtävät viikolta kolme tekeillä
 
