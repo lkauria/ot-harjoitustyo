@@ -6,6 +6,6 @@ sequenceDiagram
     machine1->>fueltank1: FuelTank()
     machine1->>fueltank1: fill(40)
     machine1->>engine1: Engine(fueltank1)
-    machine1->>main: drive()
+    main->>machine1: drive()
 
 ```
