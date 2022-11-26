@@ -1,4 +1,3 @@
-import re
 from entities.user import User
 from entities.transaction import Transaction
 
@@ -17,5 +16,5 @@ class TransactionService:
 
         return
 
-## not ready
+## not ready, do login logic first then back here
 
