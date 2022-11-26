@@ -7,5 +7,8 @@
 ###### Linkki työaikakirjanpitoon: https://github.com/lkauria/ot-harjoitustyo/blob/main/tyoaikakirjanpito.md
 ## Kolmannen laskariviikon palautukset
 ###### Tehty
-###### Harjoitustyö ei edistynyt tällä viikolla
+###### Harjoitustyö edistyi tällä viikolla odotuksia huonommin
+## Neljäs viikko
+###### Ei enää laskareita
+###### Harjoitustyön kolmannen viikon asiat edistyvät ja osittain neljännen
 
