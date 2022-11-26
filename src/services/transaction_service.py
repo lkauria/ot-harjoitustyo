@@ -1,5 +1,5 @@
-from entities.user import User
-from entities.transaction import Transaction
+#from entities.user import User
+#from entities.transaction import Transaction
 
 class TransactionService:
     def __init__(self, transaction_repository, user_repository):
@@ -7,14 +7,6 @@ class TransactionService:
         self._transction_repository = transaction_repository
         self._user_repository = user_repository
 
-    def create_transaction(self, content):
-        transaction = Transaction(content=content, user=self._user)
-
-        return self._transction_repository.create(transaction)
-
-    def get_list_of_transactions(self):
-
-        return
-
-## not ready, do login logic first then back here
-
+#    def create_transaction(self, content):
+#        transaction = Transaction(content=content, user=self._user)
+#        return self._transction_repository.create(transaction)
