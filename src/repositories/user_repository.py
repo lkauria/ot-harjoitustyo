@@ -5,16 +5,13 @@ from entities.user import User
 class UserRepository:
 
     def __init__(self, connection):
-
         self._connection = connection
+        print("CONNECTION ", connection)
 
     def find_all(self):
         cursor = self._connection.cursor()
-
         cursor.execute("SELECT * FROM users")
-
         rows = cursor.fetchall()
-
         return [User(row["username"], row["password"]) for row in rows]
 
     def create_user(self, user):
