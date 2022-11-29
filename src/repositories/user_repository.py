@@ -6,7 +6,6 @@ class UserRepository:
 
     def __init__(self, connection):
         self._connection = connection
-        print("CONNECTION ", connection)
 
     def find_all(self):
         cursor = self._connection.cursor()

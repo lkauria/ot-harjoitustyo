@@ -8,3 +8,6 @@
 
 ## Suunnitellut toiminnallisuudet
 ###### Idea 1: Kirjautuminen, menojen ja tulojen syöttäminen, menojen ja tulojen luokittelu, raportointinäkymät kuukausi- ja vuositasolla
+
+## Toteutettu
+###### Käyttäjän luominen
