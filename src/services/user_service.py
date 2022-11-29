@@ -1,11 +1,11 @@
 from entities.user import User
-from repositories.user_repository import UserRepository
+from repositories.user_repository import user_repository
 
 class UserService:
     def __init__(self):
         self._user = None
         # luodaan user repository -olio
-        self._user_repository = UserRepository()
+        self._user_repository = user_repository
 
     def create_user(self, username, password):
         user = User(username, password)

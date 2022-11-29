@@ -1,5 +1,7 @@
 from tkinter import Tk, Label, Button, Entry
 from ui.ui import UI
+from repositories.user_repository import user_repository
+
 
 def main():
     window = Tk()
@@ -9,6 +11,7 @@ def main():
     ui_view = UI(window)
     ui_view.start()
 
+    print(user_repository.find_all())
     window.mainloop()
 
 if __name__ == "__main__":
