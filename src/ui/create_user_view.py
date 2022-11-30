@@ -15,10 +15,6 @@ class CreateUserView:
         pass
 
     def _show(self):
-
-        login_label = Label(self._root, text="Logiikka kirjautumiselle alkaa")
-        login_label.grid(row=4, column=1)
-
         label_welcome = Label(self._root, text="Tervetuloa budjetointisovellukseen!")
         button_login = Button(self._root, text="Kirjaudu", padx=50,
                         pady=20, command=self._create_user, bg="#66CDAA")
@@ -32,6 +28,5 @@ class CreateUserView:
         self.entry_password.grid(row=2, column=1)
 
     def _create_user(self):
-
         self._handle_create_user(self.entry_username.get(), self.entry_password.get())
         
