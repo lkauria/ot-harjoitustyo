@@ -1,16 +1,64 @@
 # ot-harjoitustyo
-## Ensimmäisen laskariviikon palautukset
-###### Tehty
-## Toisen laskariviikon palautukset
-###### Tehty
-###### Linkki harjoitustyön vaatimusmäärittelydokumenttiin: https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md
-###### Linkki työaikakirjanpitoon: https://github.com/lkauria/ot-harjoitustyo/blob/main/tyoaikakirjanpito.md
-## Kolmannen laskariviikon palautukset
-###### Tehty
-###### Harjoitustyö edistyi tällä viikolla odotuksia huonommin
-## Neljäs viikko
-###### Ei enää laskareita
-###### Harjoitustyön kolmannen viikon asiat edistyvät ja osittain neljännen
-## Viides viikko
-###### Harjoitustyö edistyy, vaikkakin jäljessä
+Sovellus auttaa henkilöä ylläpitämään menoistansa ja tuloistansa kirjaa. Sovellusta on mahdollista käyttää rekisteröityneenä ja kirjautuneena.
 
+
+## Python-versio
+
+Sovellus on ohjelmoitu Python-versiota 3.8 käyttäen ja sitä ei ole testattu muilla Python-versioilla.
+
+## Dokumentaatio
+
+- [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
+- [Changelog](./dokumentaatio/changelog.md)
+- [Työaikakirjanpito](./tyoaikakirjanpito.md)
+- [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md) Ei vielä ole
+- [Käyttöohje](./dokumentaatio/kaytto-ohje.md) Ei vielä ole
+
+## Asennus
+
+1. Kloonaa repositorio gitistä
+```zsh
+git clone git@github.com:lkauria/ot-harjoitustyo.git
+```
+
+2. Asenna projektin riippuvuudet, kun olet projektin juuressa
+```zsh
+poetry install
+```
+
+3. Käynnistä sovellus hyödyntäen valmiita Invoke-taskeja
+```zsh
+poetry run invoke start
+```
+
+## Komentorivitoiminnot 
+
+Ohjelman käynnistäminen
+
+ ```bash
+poetry run invoke start
+```
+
+#### Testaus
+
+Testien ajaminen
+
+```bash
+poetry run invoke test
+```
+
+#### Testikattavuus
+
+Testikattavuusraportin luonti. Luonnin jälkeen näet, mistä voit html-raportin avata.
+
+```bash
+poetry run invoke coverage-report
+```
+
+#### Koodin siisteys
+
+Pylintillä tarkistetaan koodin siisteys määritellyillä säännöillä [.pylintrc](./.pylintrc)
+
+```bash
+poetry run invoke pylint
+```
