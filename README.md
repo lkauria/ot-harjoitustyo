@@ -11,4 +11,6 @@
 ## Neljäs viikko
 ###### Ei enää laskareita
 ###### Harjoitustyön kolmannen viikon asiat edistyvät ja osittain neljännen
+## Viides viikko
+###### Harjoitustyö edistyy, vaikkakin jäljessä
 
