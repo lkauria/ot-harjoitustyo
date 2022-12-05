@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Button, Entry
+from tkinter import Tk
 from ui.ui import UI
 from repositories.user_repository import user_repository
 

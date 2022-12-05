@@ -21,5 +21,4 @@ class UserRepository:
             (user.username, user.password)
         )
         self._connection.commit()
-        
 user_repository = UserRepository(get_database_connection())

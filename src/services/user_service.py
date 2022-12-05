@@ -4,7 +4,6 @@ from repositories.user_repository import user_repository
 class UserService:
     def __init__(self):
         self._user = None
-        # create repository object for use for services 
         self._user_repository = user_repository
 
     def create_user(self, username, password):
