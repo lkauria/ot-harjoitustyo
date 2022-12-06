@@ -44,6 +44,7 @@ Luokat 'User' ja 'Transaction'
 
 Käyttäjätilin luominen näyttää sekvenssikaaviona tältä. Viimeistä LoginView'hun uudelleenohjausta ei ole vielä toteutettu.
 
+```mermaid
 sequenceDiagram
     actor User
     participant UI
@@ -58,3 +59,4 @@ sequenceDiagram
     UserRepository->>UserService: {authenticated}
     UserService-->>UI: redirect /loginView
     UI-->User: see LoginView 
+```
