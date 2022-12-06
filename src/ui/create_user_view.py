@@ -16,7 +16,7 @@ class CreateUserView:
 
     def _show(self):
         label_welcome = Label(self._root, text="Tervetuloa budjetointisovellukseen!")
-        button_login = Button(self._root, text="Kirjaudu", padx=50,
+        button_login = Button(self._root, text="Luo käyttäjätili", padx=50,
                         pady=20, command=self._create_user, bg="#66CDAA")
 
         self.entry_username = Entry(self._root, width=60)

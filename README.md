@@ -5,7 +5,7 @@ Sovellus auttaa henkilöä ylläpitämään menoistansa ja tuloistansa kirjaa. S
 
 ## Python-versio
 
-Sovellus on ohjelmoitu Python-versiota 3.8 käyttäen ja sitä ei ole testattu muilla Python-versioilla.
+Sovellus on ohjelmoitu Python-versiota 3.8 käyttäen ja sitä ei ole testattu muilla Python-versioilla. Poetrysta on käytössä versio 1.2.2. Python ja Poetry pitää molemmat olla asennettuna ennen tämän sovelluksen asennusohjeita.
 
 ## Dokumentaatio
 

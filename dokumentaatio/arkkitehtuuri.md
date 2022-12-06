@@ -40,4 +40,21 @@ Luokat 'User' ja 'Transaction'
 
 ## Päätoiminnallisuudet
 
-Tähän sekvenssikaavioina käyttäjätarinoiden läpikäynti
+#### Käyttäjätilin luominen
+
+Käyttäjätilin luominen näyttää sekvenssikaaviona tältä. Viimeistä LoginView'hun uudelleenohjausta ei ole vielä toteutettu.
+
+sequenceDiagram
+    actor User
+    participant UI
+    participant UserService
+    participant UserRepository
+    participant database
+    User->>UI: Click "Create user"
+    UI->>UserService: create_user("username1", "passw1")
+    UserService->>UserRepository: create_user(user)
+    UserRepository->>database: INSERT INTO users
+    database-->>UserRepository: result
+    UserRepository->>UserService: {authenticated}
+    UserService-->>UI: redirect /loginView
+    UI-->User: see LoginView 
