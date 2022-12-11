@@ -5,9 +5,10 @@ from services.user_service import user_service
 class UI:
     def __init__(self, root):
         self._root = root
+        # This view changes by the use and first it is set to None
         self._current_view = None
         
-    # FIRST PAGE IS LOGIN
+    # FIRST PAGE IS CREATE USER VIEW ATM
     def start(self):
         self._show_create_user_view()
 
@@ -22,11 +23,11 @@ class UI:
         self._hide_current_view()
         self._current_view = CreateUserView(
             self._root,
-            self._handle_create_user,
+            self._handle_create_user
         )
         self._current_view.pack()
 
     # IF USER PUSHES THE BUTTON CREATE USER ON UI, _CREATE_USER METHOD IN CREATE USER VIEW SENDS HANDLING TO HERE
-    def _handle_create_user(self, username, password):
+    def _handle_create_user(self, username, password): 
         user_service.create_user(username, password)
         print("INSIDE HANDLER ", user_service.list_all_users())
