@@ -4,7 +4,8 @@
 - Tähän kuva kerrosarkkitehtuurista
 
 ## Käyttöliittymä
-- Lisätään, kun valmiimpi 
+ <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/create_user_and_login.png" width="300">
+ <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/transactions.png" width="300">
 
 
 ## Sovelluslogiikka 
