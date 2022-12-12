@@ -13,7 +13,7 @@
 
 #### Kerroskuvaus
 
-<img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/package_diagram_drawio.png" width="500">
+<img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/package_diagram.drawio.png" width="500">
 
 ###### Tietomalli, Luokat
 
