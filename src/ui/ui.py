@@ -1,4 +1,5 @@
 from ui.create_user_view import CreateUserView
+from ui.login_view import LoginView
 from services.user_service import user_service
 
 
@@ -10,7 +11,7 @@ class UI:
         
     # FIRST PAGE IS CREATE USER VIEW ATM
     def start(self):
-        self._show_create_user_view()
+        self._show_login_view()
 
     # DESTROY CURRENT VIEW BEFORE CREATING A NEW VIEW
     def _hide_current_view(self):
@@ -30,4 +31,18 @@ class UI:
     # IF USER PUSHES THE BUTTON CREATE USER ON UI, _CREATE_USER METHOD IN CREATE USER VIEW SENDS HANDLING TO HERE
     def _handle_create_user(self, username, password): 
         user_service.create_user(username, password)
-        print("INSIDE HANDLER ", user_service.list_all_users())
+
+    # LOGIN VIEW
+    def _show_login_view(self):
+        self._hide_current_view()
+        self._current_view = LoginView(
+            self._root,
+            self._handle_login,
+            self._show_create_user_view
+        )
+        self._current_view.pack()
+
+    # HANDLE LOGIN USER, NOT READY
+    def _handle_login(self, username, password):
+        user_service.login(username, password)
+        print("login handler")

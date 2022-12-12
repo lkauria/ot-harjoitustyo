@@ -10,6 +10,10 @@ class UserService:
         user = User(username, password)
         self._user_repository.create_user(user)
 
+    def login(self, username, password):
+        user = User(username, password)
+        self._user_repository.login(user)
+
     def list_all_users(self):
         return self._user_repository.find_all()
 

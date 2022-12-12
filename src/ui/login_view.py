@@ -1,0 +1,89 @@
+from tkinter import Button, Entry, Label, StringVar, ttk
+
+
+class LoginView:
+
+    def __init__(self, root, handle_login, handle_show_create_user_view):
+        self._root = root
+        self._handle_login = handle_login
+        self._handle_show_create_user_view = handle_show_create_user_view
+        self.username = StringVar()
+        self.password = StringVar()
+
+        self._show()
+
+    def pack(self):
+        print("LoginView pack")
+        pass
+
+    def destroy(self):
+        print("LoginView destroy")
+
+    def _show(self):
+
+        label_login = Label(
+            self._root, 
+            text="Tervetuloa budjetointisovellukseen!"
+        )
+
+        button_login = Button(
+            self._root, 
+            text="Kirjaudu", 
+            padx=50,
+            pady=20, 
+            command=self._login, 
+            bg="#66CDAA"
+        )
+
+        button_create_user = Button(
+            self._root, 
+            text="Luo uusi tunnus", 
+            padx=50,
+            pady=20, 
+            command=self._handle_show_create_user_view, 
+            bg="#66CDAA"
+        )
+
+        label_username = Label(
+            self._root, 
+            text="käyttäjätunnus"
+        )
+
+        label_password = Label(
+            self._root, 
+            text="salasana"
+        )
+
+        label_new_account = Label(
+            self._root, 
+            text="Oletko uusi käyttäjä?"
+        )
+
+        self.entry_username = Entry(
+            self._root, 
+            width=25
+        )
+
+        self.entry_password = Entry(
+            self._root, 
+            width=25
+        )
+
+        label_login.grid(row=0, column=1)
+        label_username.grid(row=2, column=0)
+        label_password.grid(row=3, column=0)
+
+        self.entry_username.grid(row=2, column=1)
+        self.entry_password.grid(row=3, column=1)
+
+        button_login.grid(row=5, column=1)
+
+        label_new_account.grid(row=6, column=1)
+        button_create_user.grid(row=7, column=1)
+
+
+    def _login(self):
+        self._handle_login(self.entry_username.get(), self.entry_password.get())
+
+
+        
