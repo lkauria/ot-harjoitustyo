@@ -1,4 +1,4 @@
-from tkinter import Button, Entry, Label, StringVar, ttk
+from tkinter import Button, Entry, Label, StringVar, Frame, ttk
 
 
 class CreateUserView:
@@ -6,6 +6,7 @@ class CreateUserView:
     def __init__(self, root, handle_create_user):
         self._root = root
         self._handle_create_user = handle_create_user
+        self._frame = None
         self.username = StringVar()
         self.password = StringVar()
 
@@ -13,40 +14,47 @@ class CreateUserView:
 
     
     def pack(self):
-        print("CreateUserView pack")
+        if self._frame:
+            self._frame.pack()
 
     def destroy(self):
-        print("CreateUserView destroy")
+        self._frame.destroy()
 
     def _show(self):
 
+        self._frame = Frame(
+            master=self._root,
+            padx=100,
+            pady=100
+        )
+
         label_create_user = Label(
-            self._root, 
+            master=self._frame,
             text="Luo käyttäjätunnus"
         )
 
         label_username = Label(
-            self._root, 
+            master=self._frame,
             text="käyttäjätunnus"
         )
 
         label_password = Label(
-            self._root, 
+            master=self._frame,
             text="salasana"
         )
 
         self.entry_username = Entry(
-            self._root, 
+            master=self._frame,
             width=25
         )
 
         self.entry_password = Entry(
-            self._root, 
+            master=self._frame,
             width=25
         )
 
         button_create_user = Button(
-            self._root, 
+            master=self._frame,
             text="Luo tunnus", 
             padx=50,
             pady=20, 

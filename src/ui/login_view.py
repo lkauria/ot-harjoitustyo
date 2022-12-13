@@ -1,4 +1,4 @@
-from tkinter import Button, Entry, Label, StringVar, ttk
+from tkinter import Button, Entry, Label, StringVar, Frame, ttk
 
 
 class LoginView:
@@ -7,27 +7,34 @@ class LoginView:
         self._root = root
         self._handle_login = handle_login
         self._handle_show_create_user_view = handle_show_create_user_view
+        self._frame = None
         self.username = StringVar()
         self.password = StringVar()
 
         self._show()
 
     def pack(self):
-        print("LoginView pack")
-        pass
+        if self._frame:
+            self._frame.pack()
 
     def destroy(self):
-        print("LoginView destroy")
+        self._frame.destroy()
 
     def _show(self):
 
+        self._frame = Frame(
+            master=self._root,
+            padx=100,
+            pady=100
+        )
+
         label_login = Label(
-            self._root, 
+            master=self._frame,
             text="Tervetuloa budjetointisovellukseen!"
         )
 
         button_login = Button(
-            self._root, 
+            master=self._frame,
             text="Kirjaudu", 
             padx=50,
             pady=20, 
@@ -36,7 +43,7 @@ class LoginView:
         )
 
         button_create_user = Button(
-            self._root, 
+            master=self._frame,
             text="Luo uusi tunnus", 
             padx=50,
             pady=20, 
@@ -45,27 +52,27 @@ class LoginView:
         )
 
         label_username = Label(
-            self._root, 
+            master=self._frame,
             text="käyttäjätunnus"
         )
 
         label_password = Label(
-            self._root, 
+            master=self._frame,
             text="salasana"
         )
 
         label_new_account = Label(
-            self._root, 
+            master=self._frame,
             text="Oletko uusi käyttäjä?"
         )
 
         self.entry_username = Entry(
-            self._root, 
+            master=self._frame,
             width=25
         )
 
         self.entry_password = Entry(
-            self._root, 
+            master=self._frame,
             width=25
         )
 

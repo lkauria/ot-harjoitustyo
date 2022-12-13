@@ -1,7 +1,6 @@
 # Arkkitehtuurikuvaus
 
 ## Rakenne
-- Tähän kuva kerrosarkkitehtuurista
 
 ## Käyttöliittymä
  <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/create_user_and_login.png" width="300">
