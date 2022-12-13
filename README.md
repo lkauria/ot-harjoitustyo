@@ -13,7 +13,7 @@ Sovellus on ohjelmoitu Python-versiota 3.8 käyttäen ja sitä ei ole testattu m
 - [Changelog](./dokumentaatio/changelog.md)
 - [Työaikakirjanpito](./tyoaikakirjanpito.md)
 - [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md) 
-- [Käyttöohje](./dokumentaatio/kaytto-ohje.md) Ei vielä ole
+- [Käyttöohje](./dokumentaatio/kayttoohje.md) 
 
 ## Asennus
 
