@@ -23,5 +23,13 @@
 - Invoken lisääminen
 - Changelogin lisääminen
 - Käyttäjätarinoiden luominen eli vaatimusmäärittelyn päivittäminen tarkemmaksi
-- 
+
+## Viikko 6
+
+- Login-ikkunan lisääminen
+- Loginista uudelleenohjaus uuden tilin luontiin
+- Docstring 
+- Dokumentaation laajentaminen, käyttöohjeen aloittaminen ja pakkauskaavio
+- Tkinter-näkymän uudelleenmuokkaus niin, että se sisältää myös halutun framen, ei aiemmassa versiossa ja näkymää ei saanut tyhjennettyä
+- Edelleen rakenteen ymmärtämisen opettelua ja mietintää, mihin handlerit kuuluisivat
 
