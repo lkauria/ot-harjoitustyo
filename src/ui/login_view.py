@@ -2,8 +2,17 @@ from tkinter import Button, Entry, Label, StringVar, Frame
 
 
 class LoginView:
+    """View for login to a personal user account
+    
+    Attributes: Tkinter window (root), login handler that redirects back to UI 
+    and then service class and repository class. Those classes handle login for the user."""
 
     def __init__(self, root, handle_login, handle_show_create_user_view):
+        """Constructor for creating a view for login to user account, also a first page
+        
+        Args: Tkinter window (root), handler login user"""
+
+
         self._root = root
         self._handle_login = handle_login
         self._handle_show_create_user_view = handle_show_create_user_view
