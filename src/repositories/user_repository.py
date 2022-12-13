@@ -21,6 +21,7 @@ class UserRepository:
             (user.username, user.password)
         )
         self._connection.commit()
+        print("repository: create user commit ok")
 
     def login(self, user):
         # login to application

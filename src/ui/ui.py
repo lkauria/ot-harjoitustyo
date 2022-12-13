@@ -4,23 +4,42 @@ from services.user_service import user_service
 
 
 class UI:
+    """Class that has initiative to create views
+    
+    Attribute: empty Tkinter window"""
+
+
     def __init__(self, root):
+        """Constructor for a view
+        
+        Args: Tkinter window"""
+
         self._root = root
-        # This view changes by the use and first it is set to None
         self._current_view = None
         
-    # FIRST PAGE IS CREATE USER VIEW ATM
+
     def start(self):
+        """Start redirects Tkinter window to render login view on it"""
+
         self._show_login_view()
 
-    # DESTROY CURRENT VIEW BEFORE CREATING A NEW VIEW
+
+
     def _hide_current_view(self):
+        """Before creating a new view the old view must be destroyd"""
+
         if self._current_view:
             self._current_view.destroy()
         self._current_view = None
 
-    # CREATE USER VIEW -> VIEW HAS A HANDLER FOR CREATING NEW USER
+
+
     def _show_create_user_view(self):
+        """This redirects to create an object of a class Create user view where new user 
+        creates an account.
+        
+        Result: A create user view is shown"""
+
         self._hide_current_view()
         self._current_view = CreateUserView(
             self._root,
@@ -28,12 +47,12 @@ class UI:
         )
         self._current_view.pack()
 
-    # IF USER PUSHES THE BUTTON CREATE USER ON UI, _CREATE_USER METHOD IN CREATE USER VIEW SENDS HANDLING TO HERE
-    def _handle_create_user(self, username, password): 
-        user_service.create_user(username, password)
 
-    # LOGIN VIEW
     def _show_login_view(self):
+        """This redirects to create an object of a class Login view where user can login 
+        and new user can decide to create an account.
+        
+        Result: A login view is shown"""
         self._hide_current_view()
         self._current_view = LoginView(
             self._root,
@@ -42,7 +61,23 @@ class UI:
         )
         self._current_view.pack()
 
-    # HANDLE LOGIN USER, NOT READY
+
+
+    def _handle_create_user(self, username, password):
+        """If user pushes the button to create a new user account, this method redirects the 
+        creation the user to User service class
+        
+        Args: username and password to create an account""" 
+
+        print("debug: create user handler")
+        user_service.create_user(username, password)
+
+
     def _handle_login(self, username, password):
+        """If user pushes the button to login to user account, this method redirects to 
+        checking if the user account exists with given arguments and logs in if so.
+        
+        Args: username and password to create an account""" 
+       
+        print("debug: login handler")
         user_service.login(username, password)
-        print("login handler")

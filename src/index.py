@@ -4,6 +4,7 @@ from repositories.user_repository import user_repository
 
 
 def main():
+
     window = Tk()
     window.title("Budjetointisovellus")
 

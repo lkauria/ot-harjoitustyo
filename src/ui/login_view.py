@@ -1,4 +1,4 @@
-from tkinter import Button, Entry, Label, StringVar, Frame, ttk
+from tkinter import Button, Entry, Label, StringVar, Frame
 
 
 class LoginView:

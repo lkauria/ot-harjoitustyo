@@ -8,7 +8,9 @@ class UserService:
 
     def create_user(self, username, password):
         user = User(username, password)
+        print("service: create user")
         self._user_repository.create_user(user)
+        print("service: create user")       
 
     def login(self, username, password):
         user = User(username, password)
