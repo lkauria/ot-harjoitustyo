@@ -69,7 +69,6 @@ class UI:
         
         Args: username and password to create an account""" 
 
-        print("debug: create user handler")
         user_service.create_user(username, password)
 
 
@@ -79,5 +78,4 @@ class UI:
         
         Args: username and password to create an account""" 
        
-        print("debug: login handler")
         user_service.login(username, password)

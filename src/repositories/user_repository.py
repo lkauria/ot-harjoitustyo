@@ -8,13 +8,27 @@ class UserRepository:
         self._connection = connection
 
     def find_all(self):
+        
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM users")
         rows = cursor.fetchall()
         return [User(row["username"], row["password"]) for row in rows]
 
+    def find_user(self, username):
+
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "SELECT * FROM users WHERE username = ?",
+            (username,)
+        )
+
+        row = cursor.fetchone()
+
+        return [User(row["username"], row["password"]) if row else None]
+
+
     def create_user(self, user):
-        # add new user to database
+
         cursor = self._connection.cursor()
         cursor.execute(
             "INSERT INTO users (username, password) VALUES (?, ?)",
@@ -24,7 +38,19 @@ class UserRepository:
         print("repository: create user commit ok")
 
     def login(self, user):
-        # login to application
-        pass
+
+        # do not use this but find_user to get user and do checks in service
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "SELECT * FROM users WHERE username = ?",
+            (user.username,)
+        )  
+        row = cursor.fetchone()
+
+        return [User(row["username"], row["password"]) if row else None]
+
+    
+    
+
 
 user_repository = UserRepository(get_database_connection())
