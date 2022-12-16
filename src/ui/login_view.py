@@ -99,7 +99,6 @@ class LoginView:
 
 
     def _login(self):
+        print("tuli loginiin")
         self._handle_login(self.entry_username.get(), self.entry_password.get())
 
-
-        

@@ -37,20 +37,6 @@ class UserRepository:
         self._connection.commit()
         print("repository: create user commit ok")
 
-    def login(self, user):
-
-        # do not use this but find_user to get user and do checks in service
-        cursor = self._connection.cursor()
-        cursor.execute(
-            "SELECT * FROM users WHERE username = ?",
-            (user.username,)
-        )  
-        row = cursor.fetchone()
-
-        return [User(row["username"], row["password"]) if row else None]
-
-    
-    
 
 
 user_repository = UserRepository(get_database_connection())
