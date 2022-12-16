@@ -33,3 +33,8 @@
 - Tkinter-näkymän uudelleenmuokkaus niin, että se sisältää myös halutun framen, ei aiemmassa versiossa ja näkymää ei saanut tyhjennettyä
 - Edelleen rakenteen ymmärtämisen opettelua ja mietintää, mihin handlerit kuuluisivat
 
+## Viikko 7 ja loppupalautus
+
+- Login- ja Create user -näkymien uudelleenohjaus Transaction-näkymään
+- Refaktorointi ja bugien korjausta
+- Transaction-näkymä
