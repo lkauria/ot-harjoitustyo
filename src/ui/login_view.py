@@ -7,7 +7,7 @@ class LoginView:
     Attributes: Tkinter window (root), login handler that redirects back to UI 
     and then service class and repository class. Those classes handle login for the user."""
 
-    def __init__(self, root, handle_login, handle_show_create_user_view):
+    def __init__(self, root, handle_login, handle_show_create_user_view, handle_show_transaction_view):
         """Constructor for creating a view for login to user account, also a first page
         
         Args: Tkinter window (root), handler login user"""
@@ -16,6 +16,7 @@ class LoginView:
         self._root = root
         self._handle_login = handle_login
         self._handle_show_create_user_view = handle_show_create_user_view
+        self._handle_show_transaction_view = handle_show_transaction_view
         self._frame = None
         self.username = StringVar()
         self.password = StringVar()
@@ -99,6 +100,6 @@ class LoginView:
 
 
     def _login(self):
-        print("tuli loginiin")
         self._handle_login(self.entry_username.get(), self.entry_password.get())
+        self._handle_show_transaction_view()
 

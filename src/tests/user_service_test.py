@@ -12,5 +12,4 @@ class TestUserService(unittest.TestCase):
             if user.get_username() == "user3":
                 pass
 
-
-
+    

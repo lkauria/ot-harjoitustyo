@@ -1,5 +1,6 @@
 from ui.create_user_view import CreateUserView
 from ui.login_view import LoginView
+from ui.transaction_view import TransactionView
 from services.user_service import user_service
 
 
@@ -43,7 +44,9 @@ class UI:
         self._hide_current_view()
         self._current_view = CreateUserView(
             self._root,
-            self._handle_create_user
+            self._handle_create_user,
+            self._show_login_view,
+            self._show_transaction_view
         )
         self._current_view.pack()
 
@@ -57,9 +60,20 @@ class UI:
         self._current_view = LoginView(
             self._root,
             self._handle_login,
-            self._show_create_user_view
+            self._show_create_user_view,
+            self._show_transaction_view
         )
         self._current_view.pack()
+
+    
+    def _show_transaction_view(self):
+        """This redirects to user's landing page after login where the user can see their transactions.
+        
+        Result: A transaction view is shown"""
+        self._hide_current_view()
+        self._current_view = TransactionView(
+            self._root
+        )
 
 
 
@@ -77,6 +91,5 @@ class UI:
         checking if the user account exists with given arguments and logs in if so.
         
         Args: username and password to create an account""" 
-       
-        print("_handle_login ui.py: ", )
+
         user_service.login(username, password)

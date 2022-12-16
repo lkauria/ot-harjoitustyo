@@ -8,13 +8,15 @@ class CreateUserView:
     and then service class and repository class. Those classes handle creating the new user."""
 
 
-    def __init__(self, root, handle_create_user):
+    def __init__(self, root, handle_create_user, handle_show_create_user_view, handle_show_transaction_view):
         """Constructor for creating a view for creating a new user account
         
         Args: Tkinter window (root), handler for creating a new user"""
 
         self._root = root
         self._handle_create_user = handle_create_user
+        self._handle_show_create_user_view = handle_show_create_user_view
+        self._handle_show_transaction_view = handle_show_transaction_view
         self._frame = None
         self.username = StringVar()
         self.password = StringVar()
@@ -76,6 +78,15 @@ class CreateUserView:
             bg="#66CDAA"
         )
 
+        button_login = Button(
+            master=self._frame,
+            text="Minulla on jo tunnus", 
+            padx=50,
+            pady=20, 
+            command=self._handle_show_create_user_view, 
+            bg="#66CDAA"
+        )
+
         label_create_user.grid(row=0, column=1)
         label_username.grid(row=2, column=0)
         label_password.grid(row=3, column=0)
@@ -84,10 +95,14 @@ class CreateUserView:
         self.entry_password.grid(row=3, column=1)
 
         button_create_user.grid(row=5, column=1)
+        button_login.grid(row=6,column=1)
 
     def _create_user(self):
         """When pushing a button create new user, it triggers the handler. First this redirects back 
         to UI class and after to service and repository classes."""
 
         self._handle_create_user(self.entry_username.get(), self.entry_password.get())
+        self._handle_show_transaction_view()
+        
+
         
