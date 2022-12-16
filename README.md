@@ -9,11 +9,11 @@ Sovellus on ohjelmoitu Python-versiota 3.8 käyttäen ja sitä ei ole testattu m
 
 ## Dokumentaatio
 
-- [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
-- [Changelog](./dokumentaatio/changelog.md)
+- [Vaatimusmäärittely](./documentation/vaatimusmaarittely.md)
+- [Changelog](./documentation/changelog.md)
 - [Työaikakirjanpito](./tyoaikakirjanpito.md)
-- [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md) 
-- [Käyttöohje](./dokumentaatio/kayttoohje.md) 
+- [Arkkitehtuurikuvaus](./documentation/arkkitehtuuri.md) 
+- [Käyttöohje](./documentation/kayttoohje.md) 
 
 ## Asennus
 

@@ -30,7 +30,6 @@ class UserService:
         
         user = User(username, password)
         self._user = user
-        print("Salasana ja käyttäjätunnus olivat oikein")
 
         return user
 
