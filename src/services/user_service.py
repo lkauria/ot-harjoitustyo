@@ -3,17 +3,19 @@ from repositories.user_repository import user_repository
 import errors
 
 class UserService:
+    
     def __init__(self):
         self._user = None
         self._user_repository = user_repository
 
-    def create_user(self, username, password):
+    def create_user(self, username, password, login=True):
 
-        # HERE the return is the user so I need to check if. NOW IT SAYS THAT THIS IS ALWAYS IN USE!!
-        user_exists = self._user_repository.find_user(username)   
-        if user_exists != None:
+        user_exists = self._user_repository.find_user(username)
+        if user_exists != [None]:
             raise errors.UsernameExistsError(f"Käyttäjätunnus {username} on jo käytössä.")
         user = self._user_repository.create_user(User(username, password))
+        if login:
+            self._user = user
         return user
 
     def login(self, username, password):
