@@ -17,7 +17,7 @@ class UI:
 
         self._root = root
         self._current_view = None
-        
+        self._user = None        
 
     def start(self):
         """Start redirects Tkinter window to render login view on it"""
@@ -72,7 +72,8 @@ class UI:
         Result: A transaction view is shown"""
         self._hide_current_view()
         self._current_view = TransactionView(
-            self._root
+            self._root,
+            self._user
         )
 
 
@@ -82,8 +83,8 @@ class UI:
         creation the user to User service class
         
         Args: username and password to create an account""" 
-
-        user_service.create_user(username, password)
+        self._user = user_service.create_user(username, password)
+        print("print ui.py self._user: ", self._user)
 
 
     def _handle_login(self, username, password):
@@ -91,5 +92,4 @@ class UI:
         checking if the user account exists with given arguments and logs in if so.
         
         Args: username and password to create an account""" 
-
-        user_service.login(username, password)
+        self._user = user_service.login(username, password)

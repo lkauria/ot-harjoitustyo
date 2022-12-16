@@ -14,8 +14,8 @@ class UserService:
         user_exists = self._user_repository.find_user(username)
         if user_exists != [None]:
             raise errors.UsernameExistsError(f"Käyttäjätunnus {username} on jo käytössä.")
-        user = self._user_repository.create_user(User(username, password))
-        
+        self._user_repository.create_user(User(username, password))
+        user = User(username, password)
         self._user = user
 
         return user

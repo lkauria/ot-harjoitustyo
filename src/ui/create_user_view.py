@@ -103,6 +103,5 @@ class CreateUserView:
 
         self._handle_create_user(self.entry_username.get(), self.entry_password.get())
         self._handle_show_transaction_view()
-        
 
         
