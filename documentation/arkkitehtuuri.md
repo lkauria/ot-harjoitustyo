@@ -3,8 +3,8 @@
 ## Rakenne
 
 ## Käyttöliittymä
- <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/create_user_and_login.png" width="300">
- <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/transactions.png" width="300">
+ <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/create_user_and_login.png" width="300">
+ <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/transactions.png" width="300">
 
 
 ## Sovelluslogiikka 
@@ -12,7 +12,7 @@
 
 #### Kerroskuvaus
 
-<img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/package_diagram.drawio.png" width="500">
+<img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/package_diagram.drawio.png" width="500">
 
 ###### Tietomalli, Luokat
 
