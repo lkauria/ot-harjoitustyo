@@ -19,3 +19,4 @@
 
 ## Toiminnallisuuksista toteutettu
 ###### Käyttäjätarina 1
+###### Käyttäjätarina 2
