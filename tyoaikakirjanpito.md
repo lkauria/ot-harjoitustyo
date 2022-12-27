@@ -8,6 +8,7 @@
 | 5.12. | 10   | Vanhojen viikkojen ja nykyisen viikon 5 vaatimusten täyttämistä, dokumentaation päivittämistä, virtuaalikoneella softan testausta |
 | 13.12.| 10   | Login ja Create user view, dokumentaation laajentaminen, refaktorointi, rakenteen ymmärtämistä, frameen liittyvien virheiden korjausta |
 | 16.12.| 6    | Uudelleenohjauksen rakentaminen Login-, Create user- ja Transaction-näkymille, refaktorointi, bugien korjaus ja error-tekstien kirjoittaminen |
+| 18.12.| 1    | Suunnitelma seuraavalle viikolle |
 
 ------------------------------------------------
-Tuntien summa: 61 tuntia
+Tuntien summa: 62 tuntia
