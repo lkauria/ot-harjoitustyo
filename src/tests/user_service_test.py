@@ -4,26 +4,24 @@ from errors import UsernameExistsError, InvalidUsernameError, InvalidPasswordErr
 
 class TestUserService(unittest.TestCase):
 
+    def setUp(self):
+        self.user_service = UserService()
+
     def test_create_user(self):
-        user_service = UserService()
-        user_service.create_user("user3", "passw1")
-        for user in user_service.list_all_users():
+        self.user_service.create_user("user3", "passw1")
+        for user in self.user_service.list_all_users():
             self.assertEqual(user.get_username(), "user3")
+            self.assertEqual(user.get_password(), "passw1")
 
     def test_create_user_but_username_exists(self):
-        user_service = UserService()
-        user_service.create_user("user4", "passw1")
-        self.assertRaises(UsernameExistsError, user_service.create_user, "user4", "passw1")
+        self.user_service.create_user("user4", "passw1")
+        self.assertRaises(UsernameExistsError, self.user_service.create_user, "user4", "passw1")
 
     def test_login(self):
-        user_service = UserService()
-        user_service.login("user4", "passw1")
+        self.user_service.login("user3", "passw1")
 
     def test_login_invalid_username(self):
-        user_service = UserService()
-        self.assertRaises(InvalidUsernameError, user_service.login, "user5", "passw1")
+        self.assertRaises(InvalidUsernameError, self.user_service.login, "user5", "passw1")
 
     def test_login_invalid_password(self):
-        user_service = UserService()
-        self.assertRaises(InvalidPasswordError, user_service.login, "user4", "passw5")
-
+        self.assertRaises(InvalidPasswordError, self.user_service.login, "user4", "passw5")
