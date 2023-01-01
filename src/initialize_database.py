@@ -13,11 +13,21 @@ def create_tables(connection):
     cursor = connection.cursor()
     cursor.execute('''
         create table users (
-            username text primary key,
-            password text
+            username TEXT PRIMARY KEY,
+            password TEXT
         );
     ''')
     connection.commit()
+
+    cursor.execute('''
+        create table transactions (
+            subject TEXT,
+            amount INT,
+            user_id TEXT
+        );
+    ''')
+    connection.commit()
+
 
 
 def initialize_database():
