@@ -1,4 +1,6 @@
 class Transaction:
+    """ Transaction class includes the budget incomes and expenses.
+    """
     def __init__(self, subject, amount, transaction_date, user_id):
         self.subject = subject
         self.amount = amount
