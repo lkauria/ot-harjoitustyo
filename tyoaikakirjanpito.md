@@ -9,6 +9,9 @@
 | 13.12.| 10   | Login ja Create user view, dokumentaation laajentaminen, refaktorointi, rakenteen ymmärtämistä, frameen liittyvien virheiden korjausta |
 | 16.12.| 6    | Uudelleenohjauksen rakentaminen Login-, Create user- ja Transaction-näkymille, refaktorointi, bugien korjaus ja error-tekstien kirjoittaminen |
 | 18.12.| 1    | Suunnitelma seuraavalle viikolle |
+| 27.12.| 1    | Siivottu tietokanta gitistä pois |
+| 1.1.  | 4    | Testien opettelu ja tekeminen User service -luokalle, Transactions-taulun suunnittelu ja alustus, substringien lisääminen |
+
 
 ------------------------------------------------
-Tuntien summa: 62 tuntia
+Tuntien summa: 67 tuntia

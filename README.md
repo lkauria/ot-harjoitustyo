@@ -27,7 +27,12 @@ git clone git@github.com:lkauria/ot-harjoitustyo.git
 poetry install
 ```
 
-3. Käynnistä sovellus hyödyntäen valmiita Invoke-taskeja
+3. Tietokannan alustus (SQLite)
+```zsh
+python3 src/initialize_database.py
+```
+
+4. Käynnistä sovellus hyödyntäen valmiita Invoke-taskeja
 ```zsh
 poetry run invoke start
 ```

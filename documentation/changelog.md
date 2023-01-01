@@ -38,3 +38,4 @@
 - Login- ja Create user -näkymien uudelleenohjaus Transaction-näkymään
 - Refaktorointi ja bugien korjausta
 - Transaction-näkymä
+- User Service -luokan testit
