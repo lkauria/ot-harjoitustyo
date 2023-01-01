@@ -16,7 +16,7 @@ poetry install
 
 3. Tietokannan alustus (SQLite)
 ```zsh
-python3 src/initialize_database.py
+poetry run invoke database 
 ```
 
 4. Käynnistä sovellus hyödyntäen valmiita Invoke-taskeja

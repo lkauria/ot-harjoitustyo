@@ -7,6 +7,10 @@ def drop_tables(connection):
         drop table if exists users;
     ''')
     connection.commit()
+    cursor.execute('''
+        drop table if exists transactions;
+    ''')
+    connection.commit()
 
 
 def create_tables(connection):
