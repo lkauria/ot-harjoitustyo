@@ -11,8 +11,7 @@ class LoginView:
         """Constructor for creating a view for login to user account, also a first page
         
         Args: Tkinter window (root), handler login user"""
-
-
+        
         self._root = root
         self._handle_login = handle_login
         self._handle_show_create_user_view = handle_show_create_user_view
