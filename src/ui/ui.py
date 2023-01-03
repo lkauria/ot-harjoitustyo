@@ -73,7 +73,8 @@ class UI:
         self._hide_current_view()
         self._current_view = TransactionView(
             self._root,
-            self._user
+            self._user,
+            self._handle_save_transaction
         )
         self._current_view.pack()
 
@@ -94,3 +95,6 @@ class UI:
         
         Args: username and password to create an account""" 
         self._user = user_service.login(username, password)
+
+    def _handle_save_transaction(self):
+        pass

@@ -4,9 +4,10 @@ class TransactionView:
     """ Transaction view show the budget's incomes and expenses.
     """
 
-    def __init__(self, root, user):
+    def __init__(self, root, user, handle_save_transaction):
         self._root = root
         self._user = user
+        self._handle_save_transaction = handle_save_transaction
         self._frame = None
         self.amount = StringVar()
         self.subject = StringVar()
@@ -93,9 +94,10 @@ class TransactionView:
         button_income_submit.grid(row=7, column=2)
 
     def _handle_save_expense(self):
-        # change this as negative and pass to _handle_save_income --> to do
-        pass
+        self.entry_amount = -1 * self.entry_amount.get()
+        self._handle_save_income
 
     def _handle_save_income(self):
-        pass
-
+        self.amount = self.entry_amount.get()
+        self.subject = self.entry_subject.get()
+        self._handle_save_transaction(self.amount, self.subject)
