@@ -96,5 +96,5 @@ class UI:
         Args: username and password to create an account""" 
         self._user = user_service.login(username, password)
 
-    def _handle_save_transaction(self):
-        pass
+    def _handle_save_transaction(self, user):
+        user_service.save_transaction(user.username)
