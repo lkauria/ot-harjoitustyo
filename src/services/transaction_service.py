@@ -14,5 +14,6 @@ class TransactionService:
         if amount == "" or subject == "":
             raise errors.EmptyFieldError("Kenttä tyhjänä")
         self._transaction_repository.save_transaction(username, amount, subject)
+        print("Transaction service ->")
 
 transaction_service = TransactionService()

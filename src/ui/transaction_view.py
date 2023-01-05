@@ -4,10 +4,11 @@ class TransactionView:
     """ Transaction view show the budget's incomes and expenses.
     """
 
-    def __init__(self, root, user, handle_save_transaction):
+    def __init__(self, root, user, handle_save_transaction, handle_show_transaction_view):
         self._root = root
         self._user = user
         self._handle_save_transaction = handle_save_transaction
+        self._handle_show_transaction_view = handle_show_transaction_view
         self._frame = None
         self.amount = StringVar()
         self.subject = StringVar()
@@ -96,3 +97,4 @@ class TransactionView:
             self.amount = int(self.entry_amount.get())
         self._handle_save_transaction(self._user, self.amount, self.subject)
         self.is_income = True
+        self._handle_show_transaction_view()

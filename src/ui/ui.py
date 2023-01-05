@@ -71,11 +71,13 @@ class UI:
         """This redirects to user's landing page after login where the user can see their transactions.
         
         Result: A transaction view is shown"""
+        print("renderöi uudestaan _show_transaction_view(self)")
         self._hide_current_view()
         self._current_view = TransactionView(
             self._root,
             self._user,
-            self._handle_save_transaction
+            self._handle_save_transaction,
+            self._show_transaction_view
         )
         self._current_view.pack()
 
@@ -100,3 +102,4 @@ class UI:
     def _handle_save_transaction(self, user, amount, subject):
         print("ui.py: save user ", user.username, ", amount ", amount, ", and subject ", subject)
         transaction_service.save_transaction(user.username, amount, subject)
+        print("Takaisin ui.py")
