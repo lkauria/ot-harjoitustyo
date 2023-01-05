@@ -7,3 +7,6 @@ class InvalidPasswordError(Exception):
 class UsernameExistsError(Exception):
     pass
 
+class EmptyFieldError(Exception):
+    pass
+

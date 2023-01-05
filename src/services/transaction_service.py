@@ -10,6 +10,9 @@ class TransactionService:
         self._transaction_repository = transaction_repository
 
     def save_transaction(self, username, amount, subject):
-        pass
+        print("username ", username, ", amount ", amount, ", subject ", subject)
+        if amount == "" or subject == "":
+            raise errors.EmptyFieldError("Kenttä tyhjänä")
+        self._transaction_repository.save_transaction(username, amount, subject)
 
 transaction_service = TransactionService()

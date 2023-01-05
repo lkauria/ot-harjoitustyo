@@ -11,6 +11,7 @@ class TransactionView:
         self._frame = None
         self.amount = StringVar()
         self.subject = StringVar()
+        self.is_income = True
 
         self._show()
     
@@ -44,16 +45,6 @@ class TransactionView:
             text="Aihe"
         )
 
-        self.amount = Entry(
-            master=self._frame,
-            width=25
-        )
-
-        self.subject = Entry(
-            master=self._frame,
-            width=25
-        )
-
         self.entry_amount = Entry(
             master=self._frame,
             width=25
@@ -84,8 +75,8 @@ class TransactionView:
         label_amount.grid(row=2, column=0)
         label_subject.grid(row=3, column=0)
 
-        self.amount.grid(row=2, column=1)
-        self.subject.grid(row=3, column=1)
+        self.entry_amount.grid(row=2, column=1)
+        self.entry_subject.grid(row=3, column=1)
 
         button_expense_submit.grid(row=5, column=1)
         button_income_submit.grid(row=5, column=2)
@@ -94,10 +85,14 @@ class TransactionView:
         button_income_submit.grid(row=7, column=2)
 
     def _handle_save_expense(self):
-        self.entry_amount = -1 * self.entry_amount.get()
-        self._handle_save_income
+        self.is_income = False
+        self.subject = self.entry_subject.get()
+        self.amount = -1 * int(self.entry_amount.get())
+        self._handle_save_income()
 
     def _handle_save_income(self):
-        self.amount = self.entry_amount.get()
-        self.subject = self.entry_subject.get()
-        self._handle_save_transaction(self.amount, self.subject)
+        if self.is_income:
+            self.subject = self.entry_subject.get()
+            self.amount = int(self.entry_amount.get())
+        self._handle_save_transaction(self._user, self.amount, self.subject)
+        self.is_income = True

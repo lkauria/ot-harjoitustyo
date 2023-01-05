@@ -6,4 +6,8 @@ class TransactionRepository():
     def __init__(self, connection):
         self._connection = connection
 
-    # logic for saving transaction to database
+    def save_transaction(self, username, amount, subject):
+        print("Transaction Repository, start saving")
+        pass
+
+transaction_repository = TransactionRepository(get_database_connection())

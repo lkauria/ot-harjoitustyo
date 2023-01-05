@@ -2,6 +2,7 @@ from ui.create_user_view import CreateUserView
 from ui.login_view import LoginView
 from ui.transaction_view import TransactionView
 from services.user_service import user_service
+from services.transaction_service import transaction_service
 
 
 class UI:
@@ -96,5 +97,6 @@ class UI:
         Args: username and password to create an account""" 
         self._user = user_service.login(username, password)
 
-    def _handle_save_transaction(self, user):
-        user_service.save_transaction(user.username)
+    def _handle_save_transaction(self, user, amount, subject):
+        print("ui.py: save user ", user.username, ", amount ", amount, ", and subject ", subject)
+        transaction_service.save_transaction(user.username, amount, subject)
