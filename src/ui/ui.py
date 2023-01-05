@@ -89,7 +89,6 @@ class UI:
         
         Args: username and password to create an account""" 
         self._user = user_service.create_user(username, password)
-        #print("print ui.py self._user: ", self._user)
 
 
     def _handle_login(self, username, password):

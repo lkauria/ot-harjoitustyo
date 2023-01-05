@@ -1,4 +1,4 @@
-from tkinter import Button, Entry, Label, StringVar, Frame
+from tkinter import Button, Entry, Label, StringVar, Frame, ttk
 
 class TransactionView:
     """ Transaction view show the budget's incomes and expenses.
@@ -13,6 +13,7 @@ class TransactionView:
         self.amount = StringVar()
         self.subject = StringVar()
         self.is_income = True
+        self._my_tree = ttk.Treeview(self._root)
 
         self._show()
     
@@ -30,6 +31,18 @@ class TransactionView:
             padx=100,
             pady=100
         )
+
+        self._my_tree['columns'] = ("Tulo tai meno", "Summa")
+        self._my_tree.column("#0", width=120, minwidth=25)
+        self._my_tree.column("Tulo tai meno", anchor="w", width=120)
+        self._my_tree.column("Summa", anchor="center", width=120)
+        self._my_tree.heading("#0", text="Label", anchor="w")
+        self._my_tree.heading("Tulo tai meno", text="Tulo tai meno", anchor="w")
+        self._my_tree.heading("Summa", text="Summa", anchor="center")
+        self._my_tree.insert("", "end", text="Item 1", values=("1a", "1b"))
+        self._my_tree.insert("", "end", text="Item 2", values=("2a", "2b"))      
+
+        self._my_tree.pack()
 
         label_transaction_view = Label(
             master=self._frame,
