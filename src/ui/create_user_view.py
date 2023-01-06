@@ -17,6 +17,7 @@ class CreateUserView:
         self._handle_create_user = handle_create_user
         self._handle_show_create_user_view = handle_show_create_user_view
         self._handle_show_transaction_view = handle_show_transaction_view
+
         self._frame = None
         self.username = StringVar()
         self.password = StringVar()

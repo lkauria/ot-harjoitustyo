@@ -4,11 +4,12 @@ class TransactionView:
     """ Transaction view show the budget's incomes and expenses.
     """
 
-    def __init__(self, root, user, handle_save_transaction, handle_show_transaction_view):
+    def __init__(self, root, user, handle_save_transaction, handle_show_transaction_view, handle_get_transactions):
         self._root = root
         self._user = user
         self._handle_save_transaction = handle_save_transaction
         self._handle_show_transaction_view = handle_show_transaction_view
+        self._handle_get_transactions = handle_get_transactions
         self._frame = None
         self.amount = StringVar()
         self.subject = StringVar()
@@ -32,16 +33,22 @@ class TransactionView:
             pady=100
         )
 
+        print("transaction_view.py:  let get transactions for user ", self._user)
+        transactions = self._handle_get_transactions(self._user)
+
+        """Draw a table by ttk.Treeview()"""
         self._my_tree['columns'] = ("Tulo tai meno", "Summa")
         self._my_tree.column("#0", width=120, minwidth=25)
         self._my_tree.column("Tulo tai meno", anchor="w", width=120)
         self._my_tree.column("Summa", anchor="center", width=120)
+        
         self._my_tree.heading("#0", text="Label", anchor="w")
         self._my_tree.heading("Tulo tai meno", text="Tulo tai meno", anchor="w")
         self._my_tree.heading("Summa", text="Summa", anchor="center")
-        self._my_tree.insert("", "end", text="Item 1", values=("1a", "1b"))
-        self._my_tree.insert("", "end", text="Item 2", values=("2a", "2b"))      
-
+        
+        # must be replaces with actual data
+        for transaction in transactions:
+            self._my_tree.insert("", "end", text=transaction[0], values=transaction[1:])
         self._my_tree.pack()
 
         label_transaction_view = Label(
@@ -101,7 +108,12 @@ class TransactionView:
     def _handle_save_expense(self):
         self.is_income = False
         self.subject = self.entry_subject.get()
-        self.amount = -1 * int(self.entry_amount.get())
+        self.amount = self.entry_amount.get()
+        # create logic for checking input
+        if self.amount:
+            print(self.amount)
+        else:
+            print('empty input')
         self._handle_save_income()
 
     def _handle_save_income(self):

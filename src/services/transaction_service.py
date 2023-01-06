@@ -10,10 +10,13 @@ class TransactionService:
         self._transaction_repository = transaction_repository
 
     def save_transaction(self, username, amount, subject):
-        print("username ", username, ", amount ", amount, ", subject ", subject)
+        print("Check, if empty or amount not integer, to do")
         if amount == "" or subject == "":
             raise errors.EmptyFieldError("Kenttä tyhjänä")
         self._transaction_repository.save_transaction(username, amount, subject)
-        print("Transaction service ->")
+
+    def get_transactions(self, username):
+        transactions = self._transaction_repository.find_all_transactions_of_user(username)
+        return transactions
 
 transaction_service = TransactionService()

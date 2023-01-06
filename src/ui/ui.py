@@ -77,7 +77,8 @@ class UI:
             self._root,
             self._user,
             self._handle_save_transaction,
-            self._show_transaction_view
+            self._show_transaction_view,
+            self._handle_get_transactions
         )
         self._current_view.pack()
 
@@ -99,6 +100,9 @@ class UI:
         self._user = user_service.login(username, password)
 
     def _handle_save_transaction(self, user, amount, subject):
-        print("ui.py: save user ", user.username, ", amount ", amount, ", and subject ", subject)
         transaction_service.save_transaction(user.username, amount, subject)
-        print("Takaisin ui.py")
+
+    def _handle_get_transactions(self, user):
+        print("ui.py: _handle_get_transactions with user ", user.username)
+        transactions = transaction_service.get_transactions(user.username)
+        return transactions
