@@ -39,3 +39,4 @@
 - Refaktorointi ja bugien korjausta
 - Transaction-näkymä
 - User Service -luokan testit
+- Transaction-tallentaminen ja käyttäjäkohtainen näyttäminen

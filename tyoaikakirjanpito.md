@@ -11,13 +11,12 @@
 | 18.12.| 1    | Suunnitelma seuraavalle viikolle |
 | 27.12.| 1    | Siivottu tietokanta gitistä pois |
 | 1.1.  | 4    | Testien opettelu ja tekeminen User service -luokalle, Transactions-taulun suunnittelu ja alustus, substringien lisääminen |
-| 2.1.  | x    | x |
-| 3.1.  | x    | x |
-| 4.1.  | x    | x |
-| 5.1.  | x    | x |
-| 6.1.  | x    | x |
+| 3.1.  | 1    | Tulojen ja menojen tallentaminen |
+| 4.1.  | 2    | Tulojen ja menojen tallentaminen |
+| 5.1.  | 2    | Tulojen ja menojen tallentaminen |
+| 6.1.  | 2    | Tulojen ja menojen näyttäminen käyttäjäkohtaisesti. Summa. |
 | 7.1.  | x    | x |
 | 8.1.  | x    | x |
 
 ------------------------------------------------
-Tuntien summa: 67 tuntia
+Tuntien summa: 74 tuntia
