@@ -13,6 +13,7 @@ class TransactionView:
         self._frame = None
         self.amount = StringVar()
         self.subject = StringVar()
+        self._total_amount = 0
         self.is_income = True
         self._my_tree = ttk.Treeview(self._root)
 
@@ -37,19 +38,16 @@ class TransactionView:
         transactions = self._handle_get_transactions(self._user)
 
         """Draw a table by ttk.Treeview()"""
-        self._my_tree['columns'] = ("Tulo tai meno", "Summa")
-        self._my_tree.column("#0", width=120, minwidth=25)
-        self._my_tree.column("Tulo tai meno", anchor="w", width=120)
-        self._my_tree.column("Summa", anchor="center", width=120)
-        
-        self._my_tree.heading("#0", text="Label", anchor="w")
-        self._my_tree.heading("Tulo tai meno", text="Tulo tai meno", anchor="w")
-        self._my_tree.heading("Summa", text="Summa", anchor="center")
-        
+        self._my_tree['columns'] = ("one")
+
+        self._my_tree.heading("#0", text="Aihe")
+        self._my_tree.heading("one", text="Summa")
+ 
+       
         # must be replaces with actual data
         for transaction in transactions:
             self._my_tree.insert("", "end", text=transaction[0], values=transaction[1:])
-        self._my_tree.pack()
+            self._total_amount = self._total_amount + transaction[1]
 
         label_transaction_view = Label(
             master=self._frame,
@@ -59,6 +57,11 @@ class TransactionView:
         label_amount = Label(
             master=self._frame,
             text="Summa"
+        )
+
+        label_total_amount = Label(
+            master=self._frame,
+            text=("Budjettisi kokonaisarvio on: ", str(self._total_amount))
         )
 
         label_subject = Label(
@@ -92,7 +95,8 @@ class TransactionView:
             command=self._handle_save_income
         ) 
 
-        label_transaction_view.grid(row=0, column=1)
+        label_transaction_view.grid(row=1, column=1)
+
         label_amount.grid(row=2, column=0)
         label_subject.grid(row=3, column=0)
 
@@ -104,6 +108,14 @@ class TransactionView:
 
         button_expense_submit.grid(row=7, column=1)
         button_income_submit.grid(row=7, column=2)
+
+        # This is not working with the treeview -> locating does not work.
+        self._my_tree.grid(row=9, column=1)
+
+        label_total_amount.grid(row=0, column=1)
+        # Is this pack allowed to use here? Does not work without.
+        self._my_tree.pack()
+
 
     def _handle_save_expense(self):
         self.is_income = False
