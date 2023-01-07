@@ -16,7 +16,11 @@
 
 ## Jatkokehitysideat
 ###### Käyttäjätarina 7: (Nice to have: Käyttäjä pystyy tarkastelemaan menojen ja tulojen summaa tietyllä aikavälillä)
+###### Käyttäjätarina 6: ei toteuttu, joten tänne listalle. Käyttäjätarina 7 vaatii tämän.
 
 ## Toiminnallisuuksista toteutettu
-###### Käyttäjätarina 1
-###### Käyttäjätarina 2
+###### Käyttäjätarina 1: Käyttäjä luo itsellensä käyttäjätunnuksen eli rekisteröityy
+###### Käyttäjätarina 2: Käyttäjä kirjautuu sovellukseen
+###### Käyttäjätarina 3: Käyttäjä pystyy kirjaamaan menonsa ja tulonsa sovellukseen
+###### Käyttäjätarina 4: Käyttäjä näkee kirjaamaansa menot ja tulot listana
+###### Käyttäjätarina 5: Käyttäjä näkee kirjaamiensa menojen ja tulojen loppusumman aggregoituna tilastona

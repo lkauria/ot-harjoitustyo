@@ -1,7 +1,4 @@
-class InvalidUsernameError(Exception):
-    pass
-
-class InvalidPasswordError(Exception):
+class InvalidCredentialError(Exception):
     pass
 
 class UsernameExistsError(Exception):

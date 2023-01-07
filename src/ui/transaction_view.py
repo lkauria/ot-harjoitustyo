@@ -34,7 +34,6 @@ class TransactionView:
             pady=100
         )
 
-        print("transaction_view.py:  let get transactions for user ", self._user)
         transactions = self._handle_get_transactions(self._user)
 
         """Draw a table by ttk.Treeview()"""

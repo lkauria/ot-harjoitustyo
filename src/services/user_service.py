@@ -23,10 +23,8 @@ class UserService:
     def login(self, username, password):
 
         user_exists = self._user_repository.find_user(username)
-        if user_exists == [None]:
-            raise errors.InvalidUsernameError(f"Käyttäjätunnusta {username} ei ole.")
-        if user_exists[0].password != password:
-            raise errors.InvalidPasswordError(f"Salasana no väärä.")
+        if user_exists == [None] or user_exists[0].password != password:
+            raise errors.InvalidCredentialError(f"Käyttäjätunnusta {username} ei ole ja/tai salasana on väärä.")
         
         user = User(username, password)
         self._user = user

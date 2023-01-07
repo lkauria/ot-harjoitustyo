@@ -1,4 +1,5 @@
 from tkinter import Button, Entry, Label, StringVar, Frame
+import errors
 
 
 class CreateUserView:
@@ -22,6 +23,9 @@ class CreateUserView:
         self.username = StringVar()
         self.password = StringVar()
 
+        self._error_variable = None
+        self._error_label = None
+
         self._show()
 
     
@@ -36,6 +40,13 @@ class CreateUserView:
 
         self._frame.destroy()
 
+    def _show_error(self, message):
+        self._error_variable.set(message)
+        self._error_label.grid()
+    
+    def _hide_error(self):
+        self._error_label.grid_remove()
+
     def _show(self):
         """Show method defines all the widgets inside the view"""
 
@@ -43,6 +54,14 @@ class CreateUserView:
             master=self._root,
             padx=100,
             pady=100
+        )
+
+        self._error_variable = StringVar(self._frame)
+
+        self._error_label = Label(
+            master=self._frame,
+            textvariable=self._error_variable,
+            foreground="red"
         )
 
         label_create_user = Label(
@@ -88,21 +107,25 @@ class CreateUserView:
             bg="#66CDAA"
         )
 
-        label_create_user.grid(row=0, column=1)
-        label_username.grid(row=2, column=0)
-        label_password.grid(row=3, column=0)
+        self._error_label.grid(row=0, column=1, padx=5, pady=5)
 
-        self.entry_username.grid(row=2, column=1)
-        self.entry_password.grid(row=3, column=1)
+        label_create_user.grid(row=1, column=1)
+        label_username.grid(row=3, column=0)
+        label_password.grid(row=4, column=0)
 
-        button_create_user.grid(row=5, column=1)
-        button_login.grid(row=6,column=1)
+        self.entry_username.grid(row=3, column=1)
+        self.entry_password.grid(row=4, column=1)
+
+        button_create_user.grid(row=6, column=1)
+        button_login.grid(row=7,column=1)
+
+        self._hide_error()
 
     def _create_user(self):
         """When pushing a button create new user, it triggers the handler. First this redirects back 
         to UI class and after to service and repository classes."""
-
-        self._handle_create_user(self.entry_username.get(), self.entry_password.get())
-        self._handle_show_transaction_view()
-
-        
+        try:
+            self._handle_create_user(self.entry_username.get(), self.entry_password.get())
+            self._handle_show_transaction_view()
+        except errors.UsernameExistsError:
+            self._show_error("Käyttäjätunnus on jo käytössä")

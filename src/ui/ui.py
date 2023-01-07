@@ -22,9 +22,7 @@ class UI:
 
     def start(self):
         """Start redirects Tkinter window to render login view on it"""
-
         self._show_login_view()
-
 
 
     def _hide_current_view(self):
@@ -33,7 +31,6 @@ class UI:
         if self._current_view:
             self._current_view.destroy()
         self._current_view = None
-
 
 
     def _show_create_user_view(self):
@@ -71,7 +68,6 @@ class UI:
         """This redirects to user's landing page after login where the user can see their transactions.
         
         Result: A transaction view is shown"""
-        print("renderöi uudestaan _show_transaction_view(self)")
         self._hide_current_view()
         self._current_view = TransactionView(
             self._root,
@@ -103,6 +99,5 @@ class UI:
         transaction_service.save_transaction(user.username, amount, subject)
 
     def _handle_get_transactions(self, user):
-        print("ui.py: _handle_get_transactions with user ", user.username)
         transactions = transaction_service.get_transactions(user.username)
         return transactions
