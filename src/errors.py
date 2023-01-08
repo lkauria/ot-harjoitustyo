@@ -6,4 +6,3 @@ class UsernameExistsError(Exception):
 
 class EmptyFieldError(Exception):
     pass
-

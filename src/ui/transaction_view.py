@@ -3,7 +3,6 @@ from tkinter import Button, Entry, Label, StringVar, Frame, ttk
 class TransactionView:
     """ Transaction view show the budget's incomes and expenses.
     """
-
     def __init__(self, root, user, handle_save_transaction, handle_show_transaction_view, handle_get_transactions):
         self._root = root
         self._user = user
@@ -20,33 +19,36 @@ class TransactionView:
         self._show()
     
     def pack(self):
+        """If the frame exists, this packs the widgets to the window.
+        """
         if self._frame:
             self._frame.pack()
 
     def destroy(self):
+        """This method destroys widgets that are in the window.
+        """
         self._frame.destroy()
 
     def _show(self):
+        """This sets the probable error message to the window as one widget.
 
+        Args:
+            message (str): Error message that is defined in the login method with try-except.
+        """
         self._frame = Frame(
             master=self._root,
             padx=100,
             pady=100
         )
 
-        #self.my_tree.pack_forget()
-
         transactions = self._handle_get_transactions(self._user)
 
-        """Draw a table by ttk.Treeview()"""
-
+        """Draw a table by ttk.Treeview(), this mixes .pack() and .grid() that is not solved yet"""
         self.my_tree['columns'] = ("one")
 
         self.my_tree.heading("#0", text="Aihe")
         self.my_tree.heading("one", text="Summa")
  
-       
-        # must be replaces with actual data
         for transaction in transactions:
             self.my_tree.insert("", "end", text=transaction[0], values=transaction[1:])
             self._total_amount = self._total_amount + transaction[1]
@@ -118,7 +120,7 @@ class TransactionView:
         button_expense_submit.grid(row=7, column=1)
         button_income_submit.grid(row=7, column=2)
 
-        # This is not working with the treeview -> locating does not work. neither with sticky.
+        # This is not working with the treeview -> locating does not work. neither with sticky. Unsolved.
         self.my_tree.grid(row=25, column=1, sticky="s")
 
         label_total_amount.grid(row=0, column=1)
@@ -128,17 +130,18 @@ class TransactionView:
 
 
     def _handle_save_expense(self):
+        """When saving the expense button (button_expense_submit) is pushed this method is called. Here a positive figure is changed to negative as it is an expense.
+        The saving is happening through a _handle_save_income methood as the positive income.
+        """
         self.is_income = False
         self.subject = self.entry_subject.get()
         self.amount = -1 * int(self.entry_amount.get())
-        # create logic for checking input, to do
-        if self.amount:
-            print(self.amount)
-        else:
-            print('empty input')
+        # to do: check inputs
         self._handle_save_income()
 
     def _handle_save_income(self):
+        """This handles saving both income and expense through the transaction service class.
+        """
         if self.is_income:
             self.subject = self.entry_subject.get()
             self.amount = int(self.entry_amount.get())

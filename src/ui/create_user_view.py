@@ -30,26 +30,32 @@ class CreateUserView:
 
     
     def pack(self):
-        """A method for packing/rendering Tkinter window widgets on a frame"""
-
+        """If the frame exists, this packs the widgets to the window.
+        """
         if self._frame:
             self._frame.pack()
 
     def destroy(self):
-        """A method for destroying frame and its widgets before creating a new view."""
-
+        """This method destroys widgets that are in the window.
+        """       
         self._frame.destroy()
 
     def _show_error(self, message):
+        """This sets the probable error message to the window as one widget.
+
+        Args:
+            message (str): Error message that is defined in the login method with try-except.
+        """
         self._error_variable.set(message)
         self._error_label.grid()
     
     def _hide_error(self):
+        """Remove error message from the window.
+        """
         self._error_label.grid_remove()
 
     def _show(self):
         """Show method defines all the widgets inside the view"""
-
         self._frame = Frame(
             master=self._root,
             padx=100,

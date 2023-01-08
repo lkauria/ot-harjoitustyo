@@ -3,7 +3,8 @@ from ui.ui import UI
 
 
 def main():
-
+    """This main starts the application and creates UI window.
+    """
     window = Tk()
     window.title("Budjetointisovellus")
 

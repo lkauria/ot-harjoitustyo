@@ -8,7 +8,7 @@ from services.transaction_service import transaction_service
 class UI:
     """Class that has initiative to create views
     
-    Attribute: empty Tkinter window"""
+    Attribute: "root", empty Tkinter window"""
 
 
     def __init__(self, root):
@@ -96,8 +96,23 @@ class UI:
         self._user = user_service.login(username, password)
 
     def _handle_save_transaction(self, user, amount, subject):
+        """Handles saving the transaction 
+
+        Args:
+            user (class User): for whom this transaction is saved
+            amount (int): amount of the transaction
+            subject (str): the subject for transaction
+        """
         transaction_service.save_transaction(user.username, amount, subject)
 
     def _handle_get_transactions(self, user):
+        """Fetch transactions from the database table transactions for one user.
+
+        Args:
+            user (class User): This is needed to get transactions for a specific user.
+
+        Returns:
+            transactions (class Transaction): returns transactions of a one user
+        """
         transactions = transaction_service.get_transactions(user.username)
         return transactions

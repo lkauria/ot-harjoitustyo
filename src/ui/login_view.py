@@ -26,21 +26,33 @@ class LoginView:
         self._show()
 
     def pack(self):
+        """If the frame exists, this packs the widgets to the window.
+        """
         if self._frame:
             self._frame.pack()
 
     def destroy(self):
+        """This method destroys widgets that are in the window.
+        """
         self._frame.destroy()
 
     def _show_error(self, message):
+        """This sets the probable error message to the window as one widget.
+
+        Args:
+            message (str): Error message that is defined in the login method with try-except.
+        """
         self._error_variable.set(message)
         self._error_label.grid()
     
     def _hide_error(self):
+        """Remove error message from the window.
+        """
         self._error_label.grid_remove()
 
     def _show(self):
-
+        """This show method includes all the widgets that needs to be shown in the window. This defines all the widgets: Labels, Buttons, Entries.
+        """
         self._frame = Frame(
             master=self._root,
             padx=100,
@@ -124,6 +136,8 @@ class LoginView:
 
 
     def _login(self):
+        """When the login button is pushed, this method is called. It tries to login and when fails, it shows the error message.
+        """
         try: 
             self._handle_login(self.entry_username.get(), self.entry_password.get())
             self._handle_show_transaction_view()
