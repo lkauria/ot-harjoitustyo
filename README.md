@@ -1,7 +1,7 @@
 # ot-harjoitustyo
 Sovellus auttaa henkilöä ylläpitämään menoistansa ja tuloistansa kirjaa. Sovellusta on mahdollista käyttää rekisteröityneenä ja kirjautuneena.
 
-- [Viimeisin release](https://github.com/lkauria/ot-harjoitustyo/releases/tag/viikko5)
+- [Viimeisin release](https://github.com/lkauria/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Python-versio
 
