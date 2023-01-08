@@ -2,6 +2,10 @@
 
 ## Rakenne
 
+Ohjelman rakenne noudattaa kolmikerroksista kerrosarkkitehtuuria ja sen pakkauskaavio on seuraava:
+
+<img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/package.png" width="300">
+
 ## Käyttöliittymä
  <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/create_user_and_login.png" width="300">
  <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/transactions.png" width="300">
