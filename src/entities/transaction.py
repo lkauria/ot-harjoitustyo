@@ -5,3 +5,7 @@ class Transaction:
         self.subject = subject
         self.amount = amount
         self.username = username
+
+
+    def get_amount(self):
+        return self.amount

@@ -16,7 +16,7 @@
 | 5.1.  | 2    | Tulojen ja menojen tallentaminen |
 | 6.1.  | 2    | Tulojen ja menojen näyttäminen käyttäjäkohtaisesti. Summa. |
 | 7.1.  | 4    | Bugien korjausta, dokumentointia, virhetilanteiden näyttäminen käyttöliittymässä, transaction-näkymän korjausyritystä (onnistui vain osittain) |
-| 8.1.  | 5    | Substringit, bugien korjausta, dokumentointia, pylint-virheiden korjausta, testejä, transaction-luokan testejä |
+| 8.1.  | 9    | Substringit, bugien korjausta, dokumentointia, pylint-virheiden korjausta, testejä, transaction-luokan testejä |
 
 ------------------------------------------------
-Tuntien summa: 83 tuntia
+Tuntien summa: 88 tuntia
