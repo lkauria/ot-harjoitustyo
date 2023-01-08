@@ -4,13 +4,14 @@
 
 Ohjelman rakenne noudattaa kolmikerroksista kerrosarkkitehtuuria ja sen pakkauskaavio on seuraava:
 
-<img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/package.png" width="300">
+<img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/package.png" width="800">
 
 UI sisältää käyttöliitymästä vastaavan koodin, services sisältää sovelluslogiikasta ja repositories tiedon tallennuksesta vastaavan koodin. Kerroskuvauskohdassa kuvataan kerrosten luokat ja sisältö tarkemmin.
 
 ## Käyttöliittymä
 
 Käyttöliittymä sisältää kolme eri näkymää: kirjautuminen, käyttäjätilin luominen ja budjettinäkymä.
+
  <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/create_user_and_login.png" width="300">
  <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/transactions.png" width="300">
 
