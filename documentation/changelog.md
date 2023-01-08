@@ -40,3 +40,6 @@
 - Transaction-näkymä
 - User Service -luokan testit
 - Transaction-tallentaminen ja käyttäjäkohtainen näyttäminen
+- Virheiden korjaaminen
+- Substringit puuttuviin kohtiin
+- Dokumentaation päivitys

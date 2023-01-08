@@ -1,6 +1,6 @@
 import unittest
 from services.user_service import UserService
-from errors import UsernameExistsError, InvalidUsernameError, InvalidPasswordError
+from errors import UsernameExistsError, InvalidCredentialError
 
 class TestUserService(unittest.TestCase):
 
@@ -21,7 +21,7 @@ class TestUserService(unittest.TestCase):
         self.user_service.login("user3", "passw1")
 
     def test_login_invalid_username(self):
-        self.assertRaises(InvalidUsernameError, self.user_service.login, "user5", "passw1")
+        self.assertRaises(InvalidCredentialError, self.user_service.login, "user5", "passw1")
 
     def test_login_invalid_password(self):
-        self.assertRaises(InvalidPasswordError, self.user_service.login, "user4", "passw5")
+        self.assertRaises(InvalidCredentialError, self.user_service.login, "user4", "passw5")

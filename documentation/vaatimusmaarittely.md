@@ -23,4 +23,4 @@
 ###### Käyttäjätarina 2: Käyttäjä kirjautuu sovellukseen
 ###### Käyttäjätarina 3: Käyttäjä pystyy kirjaamaan menonsa ja tulonsa sovellukseen
 ###### Käyttäjätarina 4: Käyttäjä näkee kirjaamaansa menot ja tulot listana
-###### Käyttäjätarina 5: Käyttäjä näkee kirjaamiensa menojen ja tulojen loppusumman aggregoituna tilastona
+###### Käyttäjätarina 5: Käyttäjä näkee kirjaamiensa menojen ja tulojen loppusumman aggregoituna summana

@@ -22,23 +22,20 @@ Luokat 'User' ja 'Transaction'
  classDiagram
       Transaction "*" --> "1" User
       class User{
-          id
           username
           password
       }
       class Transaction{
-          id
           user_id
           subject
-          sum
-          date_of_transaction
+          amount
       }
 ```
 
 
 ###### Database: SQLite3
 
-
+Tietokanta alustetaan README.md:n mukaisesti.
 
 ## Päätoiminnallisuudet
 
