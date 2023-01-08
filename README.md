@@ -1,5 +1,5 @@
 # ot-harjoitustyo
-Sovellus auttaa henkilöä ylläpitämään menoistansa ja tuloistansa kirjaa. Sovellusta on mahdollista käyttää rekisteröityneenä ja kirjautuneena.
+Sovellus auttaa käyttäjää budjetoimaan esimerkiksi projektinsa. Sovellukseen luodaan käyttäjätili ja kirjautunut käyttäjä näkee oman budjetin menonsa ja tulonsa.
 
 - [Viimeisin release](https://github.com/lkauria/ot-harjoitustyo/releases/tag/loppupalautus)
 
@@ -14,6 +14,7 @@ Sovellus on ohjelmoitu Python-versiota 3.8 käyttäen ja sitä ei ole testattu m
 - [Työaikakirjanpito](./tyoaikakirjanpito.md)
 - [Arkkitehtuurikuvaus](./documentation/arkkitehtuuri.md) 
 - [Käyttöohje](./documentation/kayttoohje.md) 
+- [Testaus](./documentation/testaus.md) 
 
 ## Asennus
 
