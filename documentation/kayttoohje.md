@@ -24,9 +24,12 @@ poetry run invoke database
 poetry run invoke start
 ```
 
-## Kirjautuminen ja rekisteröinti
+## Kirjautuminen ja käyttäjätilin luonti
 
 Ensimmäisessä näkymässä voit kirjautua olemassa olevalla käyttäjätunnuksella ja salasanalla. Jos sinulla ei ole vielä käyttäjätunnusta, paina "Luo uusi käyttäjätunnus". Tästä pääset näkymään, jossa voit syöttää käyttäjättunnuksen ja salasanan samaan tapaan kuin kirjautuessa. 
 
-Jos rekisteröinti onnistuu eli kukaan muu ei ole valinnut samaa käyttäjätunnustä, pääset kirjautuneen näkymään.
+Jos tilin rekisteröinti onnistuu eli kukaan muu ei ole valinnut samaa käyttäjätunnustä, pääset kirjautuneen näkymään.
 
+## Budjettinäkymä ja tulon tai menon lisäys
+
+Kirjauduttuasi sovellukseen, näet oman budjettisi. Tähän voit lisätä joko menoja tai tuloja syötekenttiä käyttäen. Huomioi, että summan pitää olla kokonaisluku ja et syötä etumerkkiä, koska valitset syöttämiseen joko tulon tai menon. Molempien kenttien täytyy sisältää arvo tai tallentaminen ei tapahdu.
