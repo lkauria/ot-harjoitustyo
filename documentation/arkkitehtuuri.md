@@ -6,13 +6,23 @@ Ohjelman rakenne noudattaa kolmikerroksista kerrosarkkitehtuuria ja sen pakkausk
 
 <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/package.png" width="300">
 
+UI sisältää käyttöliitymästä vastaavan koodin, services sisältää sovelluslogiikasta ja repositories tiedon tallennuksesta vastaavan koodin. Kerroskuvauskohdassa kuvataan kerrosten luokat ja sisältö tarkemmin.
+
 ## Käyttöliittymä
+
+Käyttöliittymä sisältää kolme eri näkymää: kirjautuminen, käyttäjätilin luominen ja budjettinäkymä.
  <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/create_user_and_login.png" width="300">
  <img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/transactions.png" width="300">
 
+Jokaiselle näistä on tehty omat luokat: Login_view.py, create_user_view.py ja transaction_view.py. Käyttöliittymä on eriytetty sovelluslogiikasta ja tallennuslogiikasta.
 
 ## Sovelluslogiikka 
 
+Sovelluksen loogisen tietomallin muodostavat käyttäjään ja tuloihin/menoihin jakautuvat luokat, User- ja Transaction-luokat. Myös sovelluslogiikan jako on tehty näiden kahden luokan mukaisesti. 
+
+User service -luokka pitää sisällään käyttäjään liittyvän logiikan, kuten käyttäjätilin luominen ja kirjautuminen. Transaction service -luokka taas huolehtii tulojen ja menojen lisäyksestä budjettiin sekä niiden näyttämisestä käyttäjäkohtaisesti.
+
+Nämä Service-luokat eli sovelluslogiikasta huolehtivat luokat ovat yhteydessä Repository-luokkiin eli luokkiin, jotka huolehtivat tiedon pysyväistalletuksesta.
 
 #### Kerroskuvaus
 
@@ -39,13 +49,17 @@ Luokat 'User' ja 'Transaction'
 
 ###### Database: SQLite3
 
-Tietokanta alustetaan README.md:n mukaisesti.
+Tietokanta alustetaan README.md:n mukaisesti. Repositories-luokat UserRepository ja TransactionRepository tallettavat tietokantaan tiedot. Molempien repositorioiden tallennus tapahtuu SQLite-tietokantaan, jossa on kaksi erillistä tietokantataulua, users ja transactions.
+
 
 ## Päätoiminnallisuudet
 
-#### Käyttäjätilin luominen
+Sovelluksen päätoiminnallisuuksia ovat kirjautuminen, käyttäjätilin luominen sekä tulojen ja menojen näyttäminen sekä kirjaus.
 
-Käyttäjätilin luominen näyttää sekvenssikaaviona tältä. 
+### Käyttäjätilin luominen
+
+Käyttäjä luo käyttäjätilin käyttäjätilin luomissivulla syöttämällä käyttäjätunnuksen ja salasanan. Tässä sekvenssikaaviossa kuvataan käyttäjätilin luonti
+
 
 ```mermaid
 sequenceDiagram
@@ -65,7 +79,9 @@ sequenceDiagram
 ```
 
 
-Käyttäjätilille kirjautuminen:
+### Käyttäjän kirjautuminen
+
+Käyttäjä kirjautuu kirjautumissivulla syöttämällä käyttäjätunnuksen ja salasanan. Tässä sekvenssikaaviossa kuvataan kirjautuminen.
 
 ```mermaid
 sequenceDiagram
@@ -84,7 +100,9 @@ sequenceDiagram
     UI-->User: see Transaction view
 ```
 
-Budjettinäkymän näyttäminen:
+### Budjettinäkymän näyttäminen:
+
+Käyttäjä kirjauduttuaan sovellukseen näkee hänen kirjaamansa menot ja tulot sekä niiden summan. 
 
 ```mermaid
 sequenceDiagram
@@ -103,4 +121,10 @@ sequenceDiagram
     UI-->User: show Transaction view
 ```
 
-Uuden menon tai tulon tallennus:
+## Ohjelmaan jääneet heikkoudet
+
+### Käyttöliittymä
+
+Menon tai tulon kirjaamisessa ei näy käyttöliittymässä virhetilannetta, vaikka sovellus ei suostukaan tallentamaan summaa, joka ei ole kokonaisluku tai jos summa tai aihe on tyhjä. 
+
+Tkinterissä ei saisi käyttää grid() ja pack() -metodeita samassa ikkunassa yhtä aikaa, mutta taulukon näyttäminen tässä ajassa ei onnistunut ilman, että molempia on käytetty. Tästä syystä taulukko on väärässä sijainnissa suunnitteluun nähden.
