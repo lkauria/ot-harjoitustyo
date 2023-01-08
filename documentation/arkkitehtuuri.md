@@ -4,7 +4,7 @@
 
 Ohjelman rakenne noudattaa kolmikerroksista kerrosarkkitehtuuria ja sen pakkauskaavio on seuraava:
 
-<img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/package.png" width="800">
+<img src="https://github.com/lkauria/ot-harjoitustyo/blob/main/documentation/pictures/package.png" width="300">
 
 UI sisältää käyttöliitymästä vastaavan koodin, services sisältää sovelluslogiikasta ja repositories tiedon tallennuksesta vastaavan koodin. Kerroskuvauskohdassa kuvataan kerrosten luokat ja sisältö tarkemmin.
 
